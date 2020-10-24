@@ -43,9 +43,9 @@ https://www.amazon.com/gp/feature.html?ie=UTF8&docId=1000765211<br>
 python -m pip install --upgrade pip<br>
 
 # how to install python module
-pip install <module><br>
+pip install module<br>
 or<br>
-python -m pip install <module><br>
+python -m pip install module<br>
 ex.<br>
 pip install OpenCC<br>
 or<br>
