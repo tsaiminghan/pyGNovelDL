@@ -16,7 +16,7 @@ def app_path():
 
 _tfmt = '%Y-%m-%d %H:%M'
 _root = app_path()
-conf_path = _root / '.config'
+conf_path = _root / 'config'
 data_path = _root / 'data'
 
 
