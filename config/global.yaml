@@ -1,0 +1,35 @@
+AozoraEpub3:
+  device: kindle
+  hor: false
+  path: D:\download\kindle\narou-develop\narou\libkindle\AozoraEpub3-1.1.0b46\AozoraEpub3.jar
+convert:
+- txt
+- aozora
+- epub
+- mobi
+- kepub
+java:
+  path: D:\download\kindle\narou-develop\jdk-9.0.4\bin\java.exe
+kepubify:
+  path: D:\download\kindle\narou-develop\narou\libkindle\AozoraEpub3-1.1.0b46\kepubify-windows-64bit.exe
+kindlegen:
+  compresslevel: -c1
+  path: D:\download\kindle\narou-develop\narou\libkindle\AozoraEpub3-1.1.0b46\kindlegen.exe
+mtp:
+  copyto: Download
+  device: Pixel 3 XL
+  enable: true
+opencc: s2t
+pool:
+  size: 2
+proxy:
+  enable: false
+  host: 10.113.1.14
+  identity: null
+  password: null
+  port: 3128
+pygnoveldl:
+  clean_finished: false
+  restore_mission: true
+regex: (^[\t ]*第[0-9一二三四五六七八九十零〇百千兩两]+[章回部節节集卷].*)
+version: 2020102401
