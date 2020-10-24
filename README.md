@@ -30,7 +30,7 @@ java<br>
 https://jdk.java.net/archive/<br>
 kepubify (epub轉kepub)<br>
 https://pgaskin.net/kepubify/<br>
-AozoraEpub3 (青空txt轉epub)<br>
+AozoraEpub3 (青空文庫txt轉epub)<br>
 https://w.atwiki.jp/hmdev/pages/21.html<br>
 KindleGen (epub轉mobi)<br>
 this is no longer available from amazon<br>
