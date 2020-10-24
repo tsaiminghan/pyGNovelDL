@@ -33,7 +33,7 @@ epub轉kepub<br>
 https://pgaskin.net/kepubify/<br>
 AozoraEpub3<br>
 青空txt轉epub<br>
-https://github.com/hmdev/AozoraEpub3/wiki/AozoraEpub3<br>
+https://w.atwiki.jp/hmdev/pages/21.html<br>
 KindleGen:<br>
 epub轉mobi<br>
 this is no longer available from amazon<br>
@@ -52,7 +52,6 @@ or<br>
 python -m pip install OpenCC<br>
 
 # study:
-https://blog.csdn.net/love666666shen/article/details/77512191<br>
 https://github.com/eight04/ComicCrawler<br>
-https://w.atwiki.jp/hmdev/pages/21.html<br>
+https://github.com/hmdev/AozoraEpub3/wiki/AozoraEpub3<br>
 https://www.aozora.gr.jp/aozora-manual/index-input.html#markup<br>
