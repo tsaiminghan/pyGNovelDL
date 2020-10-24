@@ -28,14 +28,11 @@ https://pypi.org/project/infi.systray/<br>
 # other software
 java<br>
 https://jdk.java.net/archive/<br>
-kepubify<br>
-epub轉kepub<br>
+kepubify (epub轉kepub)<br>
 https://pgaskin.net/kepubify/<br>
-AozoraEpub3<br>
-青空txt轉epub<br>
+AozoraEpub3 (青空txt轉epub)<br>
 https://w.atwiki.jp/hmdev/pages/21.html<br>
-KindleGen:<br>
-epub轉mobi<br>
+KindleGen (epub轉mobi)<br>
 this is no longer available from amazon<br>
 https://www.amazon.com/gp/feature.html?ie=UTF8&docId=1000765211<br>
 
