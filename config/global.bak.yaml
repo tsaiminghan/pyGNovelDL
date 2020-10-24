@@ -28,7 +28,7 @@ pygnoveldl:
 proxy:
   enable: false
   host: 10.113.1.14
-  identity: null
-  password: null
+  identity: ''
+  password: ''
   port: 3128
 regex: (^[\t ]*第[0-9一二三四五六七八九十零〇百千兩两]+[章回部節节集卷].*)
