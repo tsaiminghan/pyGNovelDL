@@ -1,0 +1,26 @@
+version: 1
+disable_existing_loggers: true
+formatters:
+  simple:
+    format: '%(asctime)s [%(threadName)s] %(message)s'
+    # datefmt: '%H:%M:%S'
+handlers:
+  console:
+    class: logging.StreamHandler
+    formatter: simple
+    level: INFO
+    stream: ext://sys.stdout
+  file:
+    class: logging.FileHandler
+    formatter: simple
+    level: DEBUG
+    filename: debug.log
+    encoding: utf8
+    mode: w
+loggers:
+  main:
+    level: DEBUG
+    handlers: [file]
+root:
+  level: INFO
+  handlers: [console]
