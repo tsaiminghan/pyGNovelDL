@@ -148,6 +148,13 @@ class MissionMgr(object):
             self._mission_remove(mission)
 
     def register(self):
+        @self.worker.register('RESTORE_FAIL')
+        def _():
+            for mission in self.table.get_children():
+                tree_keys = mission.usage['FAIL'].copy()
+                for tree_key in tree_keys:
+                    self.update_state(mission, tree_key, state='READY')
+
         @self.current.register('MISSION_REMOVE')
         def _(tree_key):
             self._mission_remove(tree_key)

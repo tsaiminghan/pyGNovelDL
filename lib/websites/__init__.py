@@ -2,6 +2,7 @@ from pathlib import Path
 from urllib import parse
 from . import book_qidian_com
 from . import tw_aixdzs_com
+from . import www_35xs_co
 from . import www_50zw_net
 from . import www_67shu_net
 from . import www_230book_com
@@ -27,9 +28,10 @@ class Loader(ModLoader):
         self.mod_list = [
             book_qidian_com,
             tw_aixdzs_com,
+            www_230book_com,
+            www_35xs_co,
             www_50zw_net,
             www_67shu_net,
-            www_230book_com,
             www_b5200_net,
             www_booktxt_net,
             www_ck101_org,

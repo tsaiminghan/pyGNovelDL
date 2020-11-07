@@ -94,6 +94,10 @@ def bind_menu(tab):
             iid = selected[0]
             tv.move(iid, '', len(tv.get_children())-1)
 
+        @util.bind_menu('重置失敗任務')
+        def _():
+            tab.main.worker.put_normal('RESTORE_FAIL')
+
         @util.bind_menu_set(callback)
         @util.bind_menu('清除任務')
         def _():
