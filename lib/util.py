@@ -4,6 +4,18 @@ import functools
 import os
 
 
+def copy(src, tar, *, size=1024*1024, callback=None):
+    total = os.path.getsize(src)
+    current = 0
+    with open(src, 'rb') as fin:
+        with open(tar, 'wb') as fout:
+            while data := fin.read(size):
+                current += len(data)
+                fout.write(data)
+                if callback:
+                    callback(tar, current, total)
+
+
 def split(s, length):
     while s:
         yield s[:length]

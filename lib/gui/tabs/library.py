@@ -2,8 +2,6 @@ import tkinter as tk
 from tkinter import ttk
 from functools import partial
 from datetime import datetime
-import traceback
-from pathlib import Path
 from ..common import set_enable, is_disabled
 from ..common import message_box as messagebox
 from ..table import Table
@@ -71,6 +69,24 @@ def bind_menu(tab):
         @util.bind_menu('傳送到', 'kindle')
         def _():
             from ...cmds.send import Command
+
+            def callback(tar, current, total):
+                percent = int(current / total * 100)
+                log(f'{tar} {percent}%')
+
+            if not hasattr(tab, 'reg_copy_file'):
+                @tab.main.worker.register('COPY_FILE')
+                def _(url):
+                    try:
+                        Command.send2(url, callback)
+                    except FileNotFoundError as e:
+                        name = BOOKS[key]['title']
+                        log(f'mobi不存在 ({name})')
+                    except:
+                        logger.exception('傳送到Kindle失敗')
+                        log('傳送到Kindle失敗')
+                tab.reg_copy_file = True
+
             if not Command.kindle_exist():
                 """ TODO """
                 log('找不到kindle裝置')
@@ -78,7 +94,7 @@ def bind_menu(tab):
             for key in table.selected():
                 key = table.set(key, 'id')
                 url = BOOKS[key]['toc_url']
-                log(Command.send(url))
+                tab.main.worker.put_normal('COPY_FILE', url)
 
         if GLOBAL.mtp['enable']:
             @util.bind_menu('傳送到', GLOBAL.mtp['device'])
@@ -112,6 +128,7 @@ def bind_menu(tab):
                 except:
                     logger.exception('轉換%s失敗', label)
                     # traceback.print_exc()
+
         if formats := GLOBAL.convert:
             for label in formats:
                 convert(label)

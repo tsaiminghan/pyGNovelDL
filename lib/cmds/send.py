@@ -1,7 +1,9 @@
+import os
 from ._device import Kindle
 from ..settings import BOOKS
 from ..book import Book
 from ._sample import Command as Base
+from ..util import copy
 
 NAME = 'send'
 
@@ -17,6 +19,15 @@ Usage n send <id1> [<id2>]...
     @staticmethod
     def kindle_exist():
         return Kindle().exist()
+
+    @staticmethod
+    def send2(url, callback):
+        k = Kindle()
+        book = Book(url)
+        mobi = book.book_file('.mobi')
+        filename = mobi.name
+        target = os.path.join(k.drive, 'documents', filename)
+        copy(mobi, target, callback=callback)
 
     @staticmethod
     def send(url):
