@@ -8,7 +8,7 @@ NETLOC = 'www.yunlaige.net'
 REGEX = fr'(?<={NETLOC}/)(book/[^/\.]+)'
 
 # OK in 2020/10/19
-# https://www.yunlaige.net/book/18123/
+# https://www.yunlaige.net/book/18123.html
 # https://www.yunlaige.net/book/18123/8559413.html
 
 

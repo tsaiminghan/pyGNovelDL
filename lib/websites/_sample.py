@@ -81,7 +81,7 @@ class NovelDL(object):
             key = self.key(url)
             if key in result:
                 del result[key]
-            title = str(chap.string)
+            title = str(chap.string).strip()
             result[key] = gen(title, [url])
         return result
 

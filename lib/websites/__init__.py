@@ -11,6 +11,8 @@ from . import www_booktxt_net
 from . import www_ck101_org
 from . import www_daomengren_com
 from . import www_iqiwx_com
+from . import www_kssw_net
+from . import www_luoqiuzw_com
 from . import www_ptwxz_com
 from . import www_ranwen_la
 from . import www_shumil_co
@@ -37,6 +39,8 @@ class Loader(ModLoader):
             www_ck101_org,
             www_daomengren_com,
             www_iqiwx_com,
+            www_kssw_net,
+            www_luoqiuzw_com,
             www_ptwxz_com,
             www_ranwen_la,
             www_shumil_co,

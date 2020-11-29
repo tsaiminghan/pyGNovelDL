@@ -1,19 +1,20 @@
-import re
 from bs4 import BeautifulSoup
+from urllib import parse
 from ._sample import NovelDL as Base
+from ._sample import gen
 from ..convert import HtmlRemove
 
-NAME = '閃舞小說網'
-NETLOC = 'www.35xs.co'
+NAME = '落秋中文'
+NETLOC = 'www.luoqiuzw.com'
 REGEX = f'(?<={NETLOC}/)(book/[^/]+)'
 
 OPTIONS = {
     'encoding': 'utf-8',
 }
 
-# OK in 2020/11/07
-# https://www.35xs.co/book/463056/
-# https://www.35xs.co/book/463056/115790882.html
+# OK in 2020/11/29
+# https://www.luoqiuzw.com/book/291/
+# https://www.luoqiuzw.com/book/291/71670943.html
 
 
 class NovelDL(Base):
@@ -23,12 +24,12 @@ class NovelDL(Base):
     options = OPTIONS
 
     @staticmethod
-    def chapters_filter(soup):
-        return soup.find(class_='mulu_list')
-
-    @staticmethod
     def content_filter(text):
         handle = HtmlRemove.get_instance()
         soup = BeautifulSoup(text, 'lxml')
-        return handle(str(soup.find(id='chaptercontent'))).replace(u'\ufeff', '', 1)
+        tag = soup.find(id='content')
+        result = ''
+        for i in tag.select('p.content_detail'):
+            result += str(i)
+        return handle(result)
 
