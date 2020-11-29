@@ -25,7 +25,6 @@ class NovelDL(Base):
     options = OPTIONS
 
     def download(self, url, **kw):
-        print ('my download')
         ok, r = super().download(url, **kw)
         if ok:
             time.sleep(.5)
