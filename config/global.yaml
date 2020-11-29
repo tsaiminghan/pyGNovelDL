@@ -32,4 +32,4 @@ pygnoveldl:
   clean_finished: false
   restore_mission: true
 regex: (^[\t ]*第[0-9一二三四五六七八九十零〇百千兩两]+[章回部節节集卷].*)
-version: 2020112901
+version: 2020112902
