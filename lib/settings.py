@@ -65,10 +65,10 @@ class YamlBase(object):
 class Global(YamlBase):
     filename = conf_path / 'global.yaml'
 
-    def __init__(self):
+    def __init__(self, sort_keys=True):
         self.filename.parent.mkdir(exist_ok=True)
         self.load()
-        atexit.register(lambda: self.dump(sort_keys=True))
+        atexit.register(lambda: self.dump(sort_keys=sort_keys))
 
 
 class Books(Global):
@@ -88,7 +88,7 @@ class Books(Global):
     filename = conf_path / 'books.yaml'
 
     def __init__(self):
-        super().__init__()
+        super().__init__(sort_keys=False)
 
     def items(self):
         for r in self.data.items():
@@ -117,7 +117,8 @@ class Books(Global):
         return (now - past) <= timedelta(hours=hours)
 
     @staticmethod
-    def item(title='', author='', timestamp='', chaps=0, toc_url=''):
+    def item(author='', chaps=0, chaps_old=0, last_check='',
+             last_update='', timestamp='',  title='', toc_url=''):
         last_check = datetime.strftime(datetime.now(), _tfmt)
         return locals()
 
@@ -138,8 +139,8 @@ class Books(Global):
 
     def sort(self):
         d = {}
-        for idx, key in enumerate(sorted(map(int, self.data.keys()))):
-            d[str(idx)] = self.data[str(key)]
+        for idx, key in enumerate(self.data.keys()):
+            d[str(idx)] = self.data[key]
         self.data = d
 
     def update(self, item):
