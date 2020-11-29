@@ -1,3 +1,4 @@
+import time
 from bs4 import BeautifulSoup
 from urllib import parse
 from ._sample import NovelDL as Base
@@ -22,6 +23,13 @@ class NovelDL(Base):
     netloc = NETLOC
     regex = REGEX
     options = OPTIONS
+
+    def download(self, url, **kw):
+        print ('my download')
+        ok, r = super().download(url, **kw)
+        if ok:
+            time.sleep(.5)
+        return ok, r
 
     @staticmethod
     def content_filter(text):
