@@ -197,7 +197,7 @@ class LibraryTab(ttk.Frame):
             set_enable(self.btn_download_update, True)
 
         def key(item):
-            if self.table.sort_on == 'chapter_number':
+            if self.table.sort_on in ['chapter_number', 'id']:
                 return eval(item[0])
             return item[0]
 
