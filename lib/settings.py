@@ -138,8 +138,8 @@ class Books(Global):
 
     def sort(self):
         d = {}
-        for idx, key in enumerate(sorted(self.data.keys())):
-            d[str(idx)] = self.data[key]
+        for idx, key in enumerate(sorted(map(int, self.data.keys()))):
+            d[str(idx)] = self.data[str(key)]
         self.data = d
 
     def update(self, item):
