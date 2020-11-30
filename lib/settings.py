@@ -146,6 +146,8 @@ class Books(Global):
     def update(self, item):
         old_item = self.find(toc_url=item['toc_url'])[1]
         if old_item:
+            item['chaps_old'] = old_item['chaps_old']
+            item['last_update'] = old_item['last_update']
             if old_item['chaps'] != item['chaps']:
                 item['last_update'] = item['last_check']
                 now = datetime.now()
