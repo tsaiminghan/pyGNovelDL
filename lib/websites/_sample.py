@@ -1,4 +1,5 @@
 import re
+import urllib3
 from collections import OrderedDict
 from bs4 import BeautifulSoup
 from urllib import parse
@@ -36,6 +37,10 @@ class NovelDL(object):
         options = OPTIONS.copy()
         options.update(self.options)
         self.options = options
+
+        if not options['download'].get('verify', True):
+            # disable warnings for verify=False
+            urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
     def parse_toc_url(self, url):
         scheme = parse.urlparse(url).scheme
