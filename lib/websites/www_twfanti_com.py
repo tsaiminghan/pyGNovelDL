@@ -7,7 +7,7 @@ from ._sample import NovelDL as Base, gen
 
 NAME = '繁體小說網'
 NETLOC = 'www.twfanti.com'
-REGEX = fr'(?<={NETLOC}/)(book/)+([^/\.]+)'
+REGEX = fr'(?<={NETLOC}/)(book/)?([^/\.]+)'
 
 # OK in 2020/10/09
 # https://www.twfanti.com/book/MoDaoShenTu7.html
