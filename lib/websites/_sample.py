@@ -41,7 +41,7 @@ class NovelDL(object):
         if not options['download'].get('verify', True):
             # disable warnings for verify=False
             urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-        if self.option['debug']:
+        if self.options['debug']:
             print(f'[debug] toc_url={self.toc_url}')
 
     def parse_toc_url(self, url):

@@ -18,7 +18,7 @@ class NovelDL(Base):
     name = NAME
     netloc = NETLOC
     regex = REGEX
-    option = OPTIONS
+    options = OPTIONS
 
     @staticmethod
     def chapters_filter(soup):
