@@ -14,6 +14,7 @@ _NA = 'NA'
 OPTIONS = {
     'download': {},
     'encoding': 'gbk',
+    'debug':    False,
 }
 
 
@@ -37,10 +38,11 @@ class NovelDL(object):
         options = OPTIONS.copy()
         options.update(self.options)
         self.options = options
-
         if not options['download'].get('verify', True):
             # disable warnings for verify=False
             urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+        if self.option['debug']:
+            print(f'[debug] toc_url={self.toc_url}')
 
     def parse_toc_url(self, url):
         scheme = parse.urlparse(url).scheme

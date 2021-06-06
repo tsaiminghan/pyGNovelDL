@@ -17,6 +17,7 @@ from . import www_ptwxz_com
 from . import www_ranwen_la
 from . import www_shumil_co
 from . import www_twfanti_com
+from . import www_xiaoshuo_cc
 from . import www_xinwanben_com
 from . import www_xssilu_com
 from . import www_yunlaige_net
@@ -45,6 +46,7 @@ class Loader(ModLoader):
             www_ranwen_la,
             www_shumil_co,
             www_twfanti_com,
+            www_xiaoshuo_cc,
             www_xinwanben_com,
             www_xssilu_com,
             www_yunlaige_net,
