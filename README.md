@@ -35,6 +35,8 @@ https://w.atwiki.jp/hmdev/pages/21.html<br>
 KindleGen (epub轉mobi)<br>
 this is no longer available from amazon<br>
 https://www.amazon.com/gp/feature.html?ie=UTF8&docId=1000765211<br>
+KindleGen Backup<br>
+https://github.com/tsaiminghan/pyGNovelDL/tree/main/ext<br>
 
 # how to upgrade pip:
 python -m pip install --upgrade pip<br>
